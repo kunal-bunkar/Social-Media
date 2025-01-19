@@ -2,6 +2,7 @@ import { MdOutlineMoreVert } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { Users } from "../../dummyData";
 import { useState } from "react";
+import AddPost from "./AddPost";
 
 const Post = ({ post }) => {
   const [like,setLike] = useState(post.like)
@@ -12,7 +13,7 @@ const Post = ({ post }) => {
     setIsLike(!isLike)
     
   }
-
+console.log(post)
   return (
     <div className="m-5  shadow-xl">
       <div className="container p-4">
@@ -32,7 +33,7 @@ const Post = ({ post }) => {
         </div>
         <div className="center my-5">
           <span className="font-mono text-lg">{post.desc}</span>
-          <img className="mt-5 w-full max-h-96" src="/images/p1.png" alt="" />
+          <img className="mt-5 w-full max-h-96" src={post.photo} alt="" />
         </div>
         <div className="bottom flex justify-between">
           <div className="bottomLeft flex items-center">
