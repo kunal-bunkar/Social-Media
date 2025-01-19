@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MdRssFeed } from "react-icons/md";
 import { IoIosChatbubbles } from "react-icons/io";
 import { MdSlowMotionVideo } from "react-icons/md";
@@ -10,6 +10,13 @@ import { Users } from "../../dummyData";
 import CloseFriends from "../CloseFriends/CloseFriends";
 
 const Sidebar = () => {
+  const [dropdown, setDropdown] = useState(false)
+
+  const dropdownHandle = () => {
+    setDropdown(!dropdown);
+    // console.log(dropdown)
+  }
+
   return (
     <div className="fixed z-0 w-1/4 mt-5 p-8 h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
       <ul className="sideBar_style">
@@ -48,16 +55,18 @@ const Sidebar = () => {
       </ul>
       <button
         type="submit"
-        className=" mt-4 mb-4 px-4 py-2 bg-slate-300 hover:bg-slate-500 hover:text-white rounded-md shadow-md transition-all duration-300"
+        className=" mt-4 mb-4 px-4 py-2 bg-slate-300 hover:bg-slate-500 hover:text-white rounded-md shadow-md transition-all duration-300"  onClick={dropdownHandle}
       >
         Show More
       </button>
       <hr className="border-t-2 border-gray-700 my-4" />
-      <ul>
-        {Users.map((u)=>
-          <CloseFriends key={u.id} user={u}/>
-        )}
-      </ul>
+      <div className="ShowMore"  >
+        <ul className="" style={ dropdown ? {visibility : "visible"} : {display: "none"}}>
+          {Users.map((u) => (
+            <CloseFriends key={u.id} user={u} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
