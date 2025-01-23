@@ -14,8 +14,8 @@ const Sidebar = () => {
 
   const dropdownHandle = () => {
     setDropdown(!dropdown);
-    // console.log(dropdown)
   }
+  
 
   return (
     <div className="fixed z-0 w-1/4 mt-5 p-8 h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
@@ -61,10 +61,12 @@ const Sidebar = () => {
       </button>
       <hr className="border-t-2 border-gray-700 my-4" />
       <div className="ShowMore"  >
-        <ul className="" style={ dropdown ? {visibility : "visible"} : {display: "none"}}>
-          {Users.map((u) => (
-            <CloseFriends key={u.id} user={u} />
-          ))}
+        <ul className="" >
+          {dropdown && (
+            Users.map((u) => (
+              <CloseFriends key={u.id} user={u} />
+            ))
+          )}
         </ul>
       </div>
     </div>

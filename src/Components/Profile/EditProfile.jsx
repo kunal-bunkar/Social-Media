@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { TiDeleteOutline } from "react-icons/ti";
 const EditProfile = ({ setHandle, handle,Setpage }) => {
   // Local state to manage form input values
   const [formValues, setFormValues] = useState({
@@ -43,13 +43,19 @@ const EditProfile = ({ setHandle, handle,Setpage }) => {
    
   };
 
-  
+  const removePage =()=>{
+    Setpage(false)
+  }
 
   return (
     <form
   onSubmit={handleFormSubmit} // Call handleFormSubmit on submit
-  className=" border-b-zinc-800 bg-slate-200 w-96 h-auto py-10 px-12 rounded-lg shadow-lg "
+  className=" border-b-zinc-800 bg-slate-200 w-96 h-auto pt-3 pb-10 px-12 rounded-lg shadow-lg "
 >
+  <div className="flex justify-end -mr-8 " onClick={removePage}>
+  <TiDeleteOutline className="text-3xl end-4 cursor-pointer"/>
+
+  </div>
   <center className="text-3xl font-semibold text-gray-800 mb-6">Edit Profile</center>
   
   <div className="main">
