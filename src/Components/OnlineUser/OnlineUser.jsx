@@ -4,8 +4,8 @@ const OnlineUser = ({user}) => {
     <li className="flex items-center my-4">
             <div className="onlineProfile flex  ">
               <img
-                className="w-12 rounded-full object-cover -mr-3  "
-                src="/images/s1.jpg"
+                className="w-12 h-12 rounded-full object-cover -mr-3  "
+                src={user.profilePicture}
                 alt="error"
               />
               <FaCircle className="text-green-500   "/>

@@ -23,13 +23,14 @@ const Post = ({ post, deletePost }) => {
         <div className="top flex items-center justify-between ">
           <div className="topLeft flex items-center">
             <img
-              className="w-12 rounded-full object-cover mr-3 "
-              src="/images/s1.jpg"
+              className="w-12 h-12 rounded-full object-cover "
+              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
               alt="error"
             />
-            <span className="font-semibold">
-              {Users.filter((u) => u.id === post.userId)[0].username}
-            </span>
+            <div className="">
+        <div className="text-lg ml-5">{Users.filter((u) => u.id === post.userId)[0].username}</div>
+        <div className="text-sm ml-5 text-gray-600">{Users.filter((u) => u.id === post.userId)[0].userId}</div>
+      </div>
             <span className="font-normal mx-5 ">{post.date}</span>
           </div>
           <div className="topRight">
