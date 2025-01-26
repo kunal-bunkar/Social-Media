@@ -20,15 +20,15 @@ const Share = ({addPost}) => {
   const handleShare =()=>{
     if(desc || photo){
       const newPost ={
-        id: Date.now(),
+        id: 10,
         desc: desc||null,
         photo: photo? URL.createObjectURL(photo) : null,
         date: "Just now",
-        userId: 1,
+        userId: 10,
         like: 0,
         comment: 0,
       }
-
+      console.log(newPost)
       addPost(newPost);
       setDesc("")
       setPhoto(null);

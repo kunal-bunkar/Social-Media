@@ -1,6 +1,6 @@
 import { IoGift } from "react-icons/io5";
 import { Users } from "../../dummyData";
-import OnlineUser from "../OnlineUser/OnlineUser";
+import OnlineUser from "./OnlineUser";
 import { Adimg } from "../../dummyData";
 import { useEffect, useState } from "react";
 

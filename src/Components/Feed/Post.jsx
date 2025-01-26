@@ -2,7 +2,6 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaHeart } from "react-icons/fa";
 import { Users } from "../../dummyData";
 import { useState } from "react";
-import Feed from "../Feed/Feed";
 
 const Post = ({ post, deletePost }) => {
   const [like, setLike] = useState(post.like);
@@ -28,14 +27,14 @@ const Post = ({ post, deletePost }) => {
               alt="error"
             />
             <div className="">
-        <div className="text-lg ml-5">{Users.filter((u) => u.id === post.userId)[0].username}</div>
+        <div className="text-lg ml-5">{Users.find((u) => u.id === post.userId)?.username || "Unknown User"}</div>
         <div className="text-sm ml-5 text-gray-600">{Users.filter((u) => u.id === post.userId)[0].userId}</div>
       </div>
             <span className="font-normal mx-5 ">{post.date}</span>
           </div>
-          <div className="topRight">
+          <div className="topRight cursor-pointer w-10 h-10 hover:bg-slate-100 rounded-full flex items-center justify-center">
             <RiDeleteBin6Line
-              className="text-2xl"
+              className="text-2xl hover:text-gray-700"
               onClick={() => callDelete(post.id)}
             />
           </div>

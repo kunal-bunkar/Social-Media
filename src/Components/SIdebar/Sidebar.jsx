@@ -7,7 +7,7 @@ import { PiBagSimple } from "react-icons/pi";
 import { MdEventNote } from "react-icons/md";
 import { GoQuestion } from "react-icons/go";
 import { Users } from "../../dummyData";
-import CloseFriends from "../CloseFriends/CloseFriends";
+import CloseFriends from "./CloseFriends";
 
 const Sidebar = () => {
   const [dropdown, setDropdown] = useState(false)

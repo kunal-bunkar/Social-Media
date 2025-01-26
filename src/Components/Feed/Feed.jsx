@@ -1,5 +1,5 @@
 import Share from "../Share/Share";
-import Post from "../Post/Post";
+import Post from "./Post";
 import { Posts } from "../../dummyData";
 import { useState } from "react";
 

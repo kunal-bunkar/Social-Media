@@ -1,4 +1,5 @@
 export const Users = [
+  
   {
     id:1,
     profilePicture: "/images/p1.png",
@@ -55,9 +56,9 @@ export const Users = [
   },
   {
     id:10,
-    profilePicture: "/images/u10.jpg",
-    username: "Safak Kocaoglu",
-    userId:"@safakkocooo",
+    profilePicture: "/images/s1.jpg",
+    username: "Kunal Bunnkar",
+    userId:"@kunalbunkar1987",
   },
 ];
 

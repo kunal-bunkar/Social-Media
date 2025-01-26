@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Profile = () => {
   const [editPage, Setpage] = useState(false);
-
+  const [showAlert, setShowAlert] = useState(false);
   const btnHandle = () => {
     Setpage(true);
     console.log(editPage);
@@ -30,6 +30,17 @@ const Profile = () => {
 
   return (
     <>
+    {showAlert && (
+        <center className=" absolute z-20 top-5 right-5 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-lg animate-slide-in">
+          <span className="block sm:inline">Profile updated successfully!</span>
+          <button
+            onClick={() => setShowAlert(false)}
+            className="ml-4 text-green-500 hover:text-green-700 focus:outline-none"
+          >
+            ×
+          </button>
+        </center>
+      )}
       <div className="flex  ">
         <div className="profile  mt-16 ">
           <div className="profileContainer ">
@@ -68,6 +79,7 @@ const Profile = () => {
                     handle={handle}
                     setHandle={setHandle}
                     Setpage={Setpage}
+                    setShowAlert={setShowAlert}
                   />
                 )}
               </div>

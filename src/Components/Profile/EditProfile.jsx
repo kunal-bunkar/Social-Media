@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { TiDeleteOutline } from "react-icons/ti";
-const EditProfile = ({ setHandle, handle,Setpage }) => {
+const EditProfile = ({ setHandle, handle,Setpage,setShowAlert }) => {
   // Local state to manage form input values
+  
   const [formValues, setFormValues] = useState({
     image: handle.image || "",
     name: handle.name || "",
@@ -38,7 +39,8 @@ const EditProfile = ({ setHandle, handle,Setpage }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent page reload
     setHandle(formValues); // Update parent state with form values
-    alert("Profile updated successfully!");
+    setShowAlert(true); // Show the alert
+    setTimeout(() => setShowAlert(false), 3000);
     Setpage(false)
    
   };
@@ -52,6 +54,7 @@ const EditProfile = ({ setHandle, handle,Setpage }) => {
   onSubmit={handleFormSubmit} // Call handleFormSubmit on submit
   className=" border-b-zinc-800 bg-slate-200 w-96 h-auto pt-3 pb-10 px-12 rounded-lg shadow-lg "
 >
+
   <div className="flex justify-end -mr-8 " onClick={removePage}>
   <TiDeleteOutline className="text-3xl end-4 cursor-pointer"/>
 
